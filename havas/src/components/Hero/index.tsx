@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
             <div className="container relative z-10 flex flex-col items-start justify-center h-full text-left text-white px-6">
                 <motion.h1
                     className="text-4xl md:text-9xl font-bold mb-4"
-                    initial={{ x: -100, opacity: 0 }}
+                    // initial={{ x: -100, opacity: 0 }}
                     animate={controls}
                     transition={{ duration: 1 }}
                 >
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
                 </motion.h1>
                 <motion.p
                     className="text-lg md:text-2xl mb-8"
-                    initial={{ x: -100, opacity: 0 }}
+                    // initial={{ x: -100, opacity: 0 }}
                     animate={controls}
                     transition={{ duration: 1, delay: 0.5 }}
                 >
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
                     href="#"
                     className="bg-gradient-to-r from-button-gradient-start to-button-gradient-end text-gray-700 hover:text-white font-medium text-lg md:text-2xl lg:text-3xl py-4 md:py-5 lg:py-6 px-4 md:px-5 lg:px-6 rounded-full"
                     // className="bg-gradient-to-r from-button-gradient-start to-button-gradient-end text-gray-700 hover:text-white font-medium text-lg md:text-2xl lg:text-3xl py-4 md:py-5 lg:py-6 px-4 md:px-5 lg:px-6 rounded-full"
-                    initial={{ x: -100, opacity: 0 }}
+                    // initial={{ x: -100, opacity: 0 }}
                     animate={controls}
                     transition={{ duration: 1, delay: 1 }}
                 >
