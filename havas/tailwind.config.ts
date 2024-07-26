@@ -11,6 +11,9 @@ const config: Config = {
       center: true,
     },
     extend: {
+      fontFamily: {
+        baikal: ['Baikal', 'sans-serif'],
+      },
       colors: {
         'button-gradient-start': '#ABA1CD',
         'button-gradient-end': '#EEADBA',

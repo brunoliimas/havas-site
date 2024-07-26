@@ -16,25 +16,13 @@ const Hero: React.FC = () => {
 
     const { scrollY } = useScroll();
     const y = useTransform(scrollY, [0, 300], [0, -100]);
-    // const controls = useAnimation();
+    const x = useTransform(scrollY, [0, 300], [0, 100]);
 
     useEffect(() => {
         const randomIndex = Math.floor(Math.random() * videoSources.length);
         setVideoSrc(videoSources[randomIndex]);
     }, []);
 
-    // useEffect(() => {
-    //     const handleScroll = () => {
-    //         if (window.scrollY > 100) {
-    //             controls.start({ x: 200, opacity: 0 });
-    //         } else {
-    //             controls.start({ x: 0, opacity: 1 });
-    //         }
-    //     };
-
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => window.removeEventListener('scroll', handleScroll);
-    // }, [controls]);
 
     return (
         <section className="relative h-screen overflow-hidden">
@@ -49,26 +37,23 @@ const Hero: React.FC = () => {
 
             <div className="container relative z-10 flex flex-col items-start justify-center h-full text-left text-white px-6">
                 <motion.h1
-                    className="text-4xl md:text-9xl font-bold mb-4"
-                    style={{
-                        y,
-                        transition: 'all 0.5s ease-out',
-                    }}>
+                    className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4"
+                    style={{ y }} // Animação do eixo Y
+                    transition={{ duration: 0.5, ease: "ease-out" }}
+                >
                     Inspirando ideias. <br />
                     Inspirando a vida.
                 </motion.h1>
                 <motion.p
-                    className="text-lg md:text-2xl mb-8"
-                    style={{
-                        y: useTransform(scrollY, [0, 300], [0, 50]), // Ajuste os valores conforme necessário
-                        transition: 'all 0.5s ease-out',
-                    }}
+                    className="text-sm md:text-base lg:text-xl xl:text-2xl mb-8"
+                    style={{ x }} // Animação do eixo X
+                    transition={{ duration: 0.5, ease: "ease-out" }}
                 >
                     Por que cuidamos de vidas, não apenas da saúde.
                 </motion.p>
                 <motion.a
                     href="#"
-                    className="bg-gradient-to-r from-button-gradient-start to-button-gradient-end text-gray-700 hover:text-white font-medium text-lg md:text-2xl lg:text-3xl py-4 md:py-5 lg:py-6 px-4 md:px-5 lg:px-6 rounded-full"
+                    className="bg-gradient-to-r from-button-gradient-start to-button-gradient-end text-gray-700 hover:text-white font-medium text-sm md:text-lg lg:text-xl py-4 md:py-5 lg:py-6 px-4 md:px-5 lg:px-6 rounded-full"
                     style={{
                         y: useTransform(scrollY, [0, 300], [0, 50]), // Ajuste os valores conforme necessário
                         transition: 'all 0.5s ease-out',
