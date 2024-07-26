@@ -1,0 +1,28 @@
+
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8000:80"  # Mapeia a porta 80 do container para a porta 8000 da máquina host
+    environment:
+      WORDPRESS_DB_HOST: db:3306  # Nome do serviço de banco de dados e porta
+      WORDPRESS_DB_USER: admin  # Usuário do banco de dados
+      WORDPRESS_DB_PASSWORD: Havas@123  # Senha do banco de dados
+      WORDPRESS_DB_NAME: havas  # Nome do banco de dados
+    volumes:
+      - wordpress_data:/var/www/html  # Volume para persistir os dados do WordPress
+
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: somerootpassword  # Senha do usuário root do MySQL
+      MYSQL_DATABASE: havas  # Nome do banco de dados a ser criado
+      MYSQL_USER: admin  # Usuário do banco de dados
+      MYSQL_PASSWORD: Havas@123  # Senha do usuário do banco de dados
+    platform: linux/x86_64  # Força a plataforma do container
+    volumes:
+      - db_data:/var/lib/mysql  # Volume para persistir os dados do MySQL
+
+volumes:
+  wordpress_data: {}
+  db_data: {}
