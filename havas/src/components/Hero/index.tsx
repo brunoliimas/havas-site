@@ -1,7 +1,7 @@
 // components/Hero.tsx
 'use client'
 import React, { useEffect, useState } from "react";
-import { PiMouseSimple } from "react-icons/pi";
+import { RiCloseLargeFill } from "react-icons/ri";
 import { motion, useAnimation } from "framer-motion";
 
 
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
                 animate={{ y: [0, 20, 0] }}
                 transition={{ duration: 1, repeat: Infinity }}
             >
-                <PiMouseSimple color="#ffffff" size={48} className="z-10 absolute bottom-4 left-[50%] translate-x-[-50%]" />
+                <RiCloseLargeFill color="#ffffff" size={48} className="z-10 absolute bottom-4 left-[50%] translate-x-[-50%]" />
             </motion.div>
         </section>
     );
