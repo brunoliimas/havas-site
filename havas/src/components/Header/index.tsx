@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-// import { FiMenu } from "react-icons/fi";
+import { FiMenu } from "react-icons/fi";
 import { RiCloseLargeFill } from "react-icons/ri";
 
 
@@ -50,7 +50,7 @@ export default function Header() {
           className="lg:hidden z-50"
           onClick={toggleMenu}
         >
-          {isOpen ? <RiCloseLargeFill size={48} /> : <RiCloseLargeFill size={48} />}
+          {isOpen ? <RiCloseLargeFill size={48} /> : <FiMenu size={48} />}
 
         </button>
         <nav className={`lg:flex lg:items-center lg:gap-7 hidden`}>
